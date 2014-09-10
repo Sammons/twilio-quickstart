@@ -1,0 +1,14 @@
+{
+  "name": "twilio-quickstart",
+  "version": "1.0.0",
+  "description": "quickstart wrapper to help participants of H.M. 2014",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "twilio": "^1.7.0"
+  }
+}
