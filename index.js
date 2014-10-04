@@ -54,7 +54,10 @@ function drain_q() {
       function() {
       count_successes = 0;  
       });
-    //sendMessage( '16363888236', 'Dan, this is HackMizzou bot, I just texted successfully - ' + count + ' people');
+    sendMessage( '16363888236', 'Dan, this is HackMizzou bot, I just texted successfully - ' + count + ' people',
+      function() {
+      count_successes = 0;  
+      });
     return;
   }
   var next = Q.pop();
