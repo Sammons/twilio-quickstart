@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send it!</title>
+  <style type="text/css">
+  textarea {
+    margin: auto;
+  }
+  .wait {
+    cursor: wait;
+  }
+  </style>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    function scrape_and_send(e) {
+      var nums = $('#numbers').val().trim();
+      var msg = $('#message').val().trim();
+      nums.replace('-','').replace('.','');
+      nums = nums.match(/[0-9]{10,10}.*?/gm);
+      $.post('/send',{ 'nums': nums, msg: msg},function() {
+          console.log('success')
+      })
+    }
+
+    $('#send').click(scrape_and_send);
+  })
+  </script>
+</head>
+<body>
+<textarea id="numbers" width=200 height=50></textarea>
+<textarea id="message" width=200 height=50></textarea>
+<button id="send">Send!</button>
+</body>
+</html>
